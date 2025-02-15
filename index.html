@@ -113,30 +113,3 @@
 
 </body>
 </html>
-
-<!-- OAuth2 Redirect Page -->
-<!DOCTYPE html>
-<html lang="de">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>OAuth2 Redirect</title>
-    </head>
-<body>
-    <script>
-        const hash = window.location.hash.substring(1);
-        const params = new URLSearchParams(hash);
-        const accessToken = params.get('access_token');
-
-        if (accessToken) {
-            // Store the access token in local storage or a cookie
-            localStorage.setItem('discordAccessToken', accessToken);
-            // Redirect to the main page
-            window.location.href = '/';
-        } else {
-            // Handle error
-            console.error('OAuth2 login failed');
-        }
-    </script>
-</body>
-</html>

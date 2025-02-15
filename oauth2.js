@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const clientId = process.env.CLIENT_ID;
+    const clientId = 'YOUR_CLIENT_ID'; // Replace with your actual Client ID
     const redirectUri = 'https://test.hstc.space/oauth2-redirect.html'; // Update with your domain
     const scope = 'identify guilds guilds.members.read';
     const responseType = 'code';
