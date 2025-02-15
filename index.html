@@ -6,11 +6,13 @@
         <title>HSTC - Helvetic Security & Transport Corp</title>
         <link rel="stylesheet" href="styles.css">
         <link rel="icon" href="assets/HSTC-Logo.png" type="image/png">
+        <script src="env.js"></script> <!-- Include the env.js file -->
     </head>
 <body>
 
     <!-- Navigation -->
     <nav class="main-nav">
+
         <div class="nav-links">
             <a href="#home">Startseite</a>
             <a href="#about-us">Über Uns</a>
@@ -18,9 +20,7 @@
             <a href="#merch">Merch-Store</a>
             <a href="#join-us">Mitglied werden</a>
             <a href="#contact">Kontakt</a>
-            <a href="#orga-ships">Orga Schiffe</a>
         </div>
-        <button id="discord-login" class="cta-button">Login mit Discord</button>
     </nav>
 
     <!-- Hero Section -->
@@ -56,23 +56,6 @@
         <p>Hier findest du unsere geplanten Events, Trainings und Missionen.</p>
     </section>
 
-    <!-- Orga-Schiffe -->
-    <section id="orga-ships" class="orga-ships">
-        <h2>Unsere Orga Schiffe</h2>
-        <div class="ships-container">
-            <div class="ship-item">
-                <img src="assets/ship1.png" alt="Ship 1">
-                <h3>Ship 1</h3>
-                <p>Beschreibung des Schiffs 1.</p>
-            </div>
-            <div class="ship-item">
-                <img src="assets/ship2.png" alt="Ship 2">
-                <h3>Ship 2</h3>
-                <p>Beschreibung des Schiffs 2.</p>
-            </div>
-        </div>
-    </section>
-
     <!-- Merch-Store -->
     <section id="merch" class="merch-container">
         <h2>HSTC Merch-Store</h2>
@@ -103,16 +86,9 @@
 
     <!-- User Roles Section -->
     <section id="user-roles">
-        <h2>User Roles</h2>
-        <div id="roles-container"></div>
     </section>
 
     <script src="scripts.js"></script>
-    <script>
-        document.getElementById('discord-login').addEventListener('click', () => {
-            window.location.href = '/auth/discord';
-        });
-    </script>
 
 </body>
 </html>

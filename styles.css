@@ -1,3 +1,4 @@
+
 :root {
     --primary-color: #3C3F46;
     --secondary-color: #E67E22;
@@ -30,11 +31,6 @@ body {
     align-items: center;
 }
 
-.nav-links {
-    display: flex;
-    align-items: center;
-}
-
 .nav-links a {
     color: var(--accent-color);
     text-decoration: none;
@@ -45,25 +41,6 @@ body {
 
 .nav-links a:hover {
     color: var(--secondary-color);
-}
-
-#discord-login {
-    background-color: #7289da;
-    color: var(--text-color);
-    padding: 12px 24px;
-    margin-left: auto;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s, transform 0.3s;
-    box-shadow: var(--box-shadow);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-#discord-login:hover {
-    background-color: #5b6eae;
-    transform: scale(1.1);
-    box-shadow: 0 0 20px #5b6eae;
 }
 
 /* Hero Section */
@@ -125,26 +102,6 @@ header#hero .logo {
     box-shadow: 0 0 20px var(--hover-color);
 }
 
-/* Login Button */
-#discord-login {
-    background-color: #7289da;
-    color: var(--text-color);
-    padding: 12px 24px;
-    margin: 10px;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s, transform 0.3s;
-    box-shadow: var(--box-shadow);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-#discord-login:hover {
-    background-color: #5b6eae;
-    transform: scale(1.1);
-    box-shadow: 0 0 20px #5b6eae;
-}
-
 /* Orga-Kalender */
 .orga-calendar {
     text-align: center;
@@ -204,46 +161,4 @@ header#hero .logo {
 .merch-item .cta-button {
     display: block;
     margin-top: 10px;
-}
-
-/* Orga-Schiffe */
-.orga-ships {
-    padding: 60px 20px;
-    background-color: var(--background-color);
-    text-align: center;
-}
-
-.orga-ships h2 {
-    color: var(--primary-color);
-    margin-bottom: 20px;
-}
-
-.ships-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
-.ship-item {
-    background-color: var(--primary-color);
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: var(--box-shadow);
-    text-align: center;
-    width: 200px;
-}
-
-.ship-item img {
-    width: 100%;
-    border-radius: 10px;
-}
-
-.ship-item h3 {
-    color: var(--secondary-color);
-    margin: 10px 0;
-}
-
-.ship-item p {
-    color: var(--accent-color);
 }
