@@ -10,9 +10,8 @@
     </head>
 <body>
 
-    <!-- Navigation -->
+    <!-- Überarbeitete Navigation -->
     <nav class="main-nav">
-
         <div class="nav-links">
             <a href="#home">Startseite</a>
             <a href="#about-us">Über Uns</a>
@@ -20,6 +19,9 @@
             <a href="#merch">Merch-Store</a>
             <a href="#join-us">Mitglied werden</a>
             <a href="#contact">Kontakt</a>
+        </div>
+        <div class="nav-actions">
+            <button id="nav-login" class="cta-button">Login</button>
         </div>
     </nav>
 
@@ -82,9 +84,7 @@
     <section id="join-us">
         <h2>Mitglied werden</h2>
         <p>Schließe dich uns an und werde Teil unserer wachsenden Community.</p>
-        <button id="discord-login" class="cta-button">
-            Mit Discord anmelden (<span id="online-players">N/A</span> online)
-        </button>
+        <p>Online: <span id="online-players">N/A</span></p>
     </section>
 
     <!-- Kontakt -->
@@ -98,23 +98,35 @@
     <section id="user-roles">
     </section>
 
-    <!-- Neu: Schiffe-Verwaltung -->
+    <!-- Überarbeitet: Schiffe-Verwaltung -->
     <section id="ships">
         <h2>Schiffe Verwaltung</h2>
-        <p>Verwalte hier deine Ingame-Schiffe. Wähle deine Schiffe aus und ordne sie der Orga zu oder behalte sie privat.</p>
-        <form id="ship-management-form">
-            <label>
-                <input type="checkbox" name="ships[]" value="Anaconda"> Anaconda
-            </label><br>
-            <label>
-                <input type="checkbox" name="ships[]" value="Caterpillar"> Caterpillar
-            </label><br>
-            <label>
-                <input type="checkbox" name="ships[]" value="Cutlass"> Cutlass
-            </label><br>
-            <!-- ... weitere Schiffoptionen ... -->
-            <button type="submit" class="cta-button">Schiffe speichern</button>
-        </form>
+        <p>Hier sind die Orga-Schiffe. Nur angemeldete Mitglieder mit entsprechenden Rechten dürfen bearbeiten.</p>
+        <div id="org-ships">
+            <!-- Beispielhafte Anzeige der Schiffe -->
+            <ul>
+                <li>Anaconda</li>
+                <li>Caterpillar</li>
+                <li>Cutlass</li>
+                <!-- ...weitere Schiffe... -->
+            </ul>
+        </div>
+        <!-- Bearbeitungsbereich, unsichtbar solange nicht eingeloggt -->
+        <div id="ship-edit" style="display:none;">
+            <form id="ship-management-form">
+                <label>
+                    <input type="checkbox" name="ships[]" value="Anaconda"> Anaconda
+                </label><br>
+                <label>
+                    <input type="checkbox" name="ships[]" value="Caterpillar"> Caterpillar
+                </label><br>
+                <label>
+                    <input type="checkbox" name="ships[]" value="Cutlass"> Cutlass
+                </label><br>
+                <!-- ... weitere Schiffoptionen ... -->
+                <button type="submit" class="cta-button">Schiffe speichern</button>
+            </form>
+        </div>
     </section>
 
     <script src="scripts.js"></script>
