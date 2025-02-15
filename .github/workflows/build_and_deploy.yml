@@ -20,15 +20,13 @@ jobs:
           mkdir -p public
           echo "window.env = { CLIENT_ID: '${{ secrets.CLIENT_ID }}', CLIENT_SECRET: '${{ secrets.CLIENT_SECRET }}' };" > public/env.js
 
-      # Install dependencies and build the project
-      - name: Install dependencies and build
-        run: |
-          npm install
-          npm run build
+      # Debug: List files in public directory
+      - name: List files in public directory
+        run: ls -la public
 
       # Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          publish_dir: ./
