@@ -38,4 +38,14 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.tab-content').forEach((tc, index) => {
         tc.style.display = index === 0 ? 'block' : 'none';
     });
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
 });
