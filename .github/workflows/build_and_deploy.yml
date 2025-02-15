@@ -14,9 +14,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      # Create env.js file with secrets
+      # Create public directory and env.js file with secrets
       - name: Create env.js file
         run: |
+          mkdir -p public
           echo "window.env = { CLIENT_ID: '${{ secrets.CLIENT_ID }}', CLIENT_SECRET: '${{ secrets.CLIENT_SECRET }}' };" > public/env.js
 
       # Install dependencies and build the project
