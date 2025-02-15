@@ -9,7 +9,8 @@
     <script>
         const clientId = '939491899226615808';
         const clientSecret = 'ILH-zYZBZ7ZMTD0VzwjKCZI4fxPxkZs7';
-        const redirectUri = window.location.origin + '/oauth2-redirect.html';
+        const redirectUri = 'https://test.hstc.com/oauth2-redirect.html'; // Update with your domain
+        const guildId = 'YOUR_GUILD_ID'; // Replace with your Discord server ID
 
         const code = new URLSearchParams(window.location.search).get('code');
 
@@ -32,8 +33,8 @@
                 if (data.access_token) {
                     // Store the access token in local storage or a cookie
                     localStorage.setItem('discordAccessToken', data.access_token);
-                    // Redirect to the main page
-                    window.location.href = '/';
+                    // Fetch user roles
+                    fetchUserRoles(data.access_token);
                 } else {
                     // Handle error
                     console.error('OAuth2 login failed', data);
@@ -44,6 +45,31 @@
             });
         } else {
             console.error('No authorization code found');
+        }
+
+        function fetchUserRoles(accessToken) {
+            fetch(`https://discord.com/api/v9/users/@me/guilds/${guildId}/member`, {
+                headers: {
+                    'Authorization': `Bearer ${accessToken}`
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.roles) {
+                    displayRoles(data.roles);
+                } else {
+                    console.error('Failed to fetch user roles', data);
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching user roles:', error);
+            });
+        }
+
+        function displayRoles(roles) {
+            const rolesContainer = document.createElement('div');
+            rolesContainer.innerHTML = `<h2>User Roles</h2><ul>${roles.map(role => `<li>${role}</li>`).join('')}</ul>`;
+            document.body.appendChild(rolesContainer);
         }
     </script>
 </body>

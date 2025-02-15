@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const clientId = '939491899226615808';
-    const redirectUri = window.location.origin + '/oauth2-redirect.html';
-    const scope = 'identify';
+    const redirectUri = 'https://test.hstc.com/oauth2-redirect.html'; // Update with your domain
+    const scope = 'identify guilds guilds.members.read';
     const responseType = 'code';
 
     const loginButton = document.getElementById('discord-login');

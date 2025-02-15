@@ -23,6 +23,36 @@ document.addEventListener('DOMContentLoaded', () => {
             });
     };
 
+    const accessToken = localStorage.getItem('discordAccessToken');
+    const guildId = 'YOUR_GUILD_ID'; // Replace with your Discord server ID
+
+    if (accessToken) {
+        fetchUserRoles(accessToken);
+    }
+
+    function fetchUserRoles(accessToken) {
+        fetch(`https://discord.com/api/v9/users/@me/guilds/${guildId}/member`, {
+            headers: {
+                'Authorization': `Bearer ${accessToken}`
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.roles) {
+                displayRoles(data.roles);
+            } else {
+                console.error('Failed to fetch user roles', data);
+            }
+        })
+        .catch(error => {
+            console.error('Error fetching user roles:', error);
+        });
+    }
+
+    function displayRoles(roles) {
+        const rolesContainer = document.getElementById('roles-container');
+        rolesContainer.innerHTML = `<ul>${roles.map(role => `<li>${role}</li>`).join('')}</ul>`;
+    }
 
     // Tab Navigation Logic
     document.querySelectorAll('.tab-button').forEach(button => {
