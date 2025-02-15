@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const clientId = 'YOUR_CLIENT_ID'; // Replace with your actual Client ID
-    const redirectUri = 'https://test.hstc.space/oauth2-redirect.html'; // Update with your domain
-    const scope = 'identify guilds guilds.members.read';
-    const responseType = 'code';
+    const clientId = window.env.CLIENT_ID;
+    const redirectUri = window.env.REDIRECT_URI; // Update with your domain
+    const scope = window.env.SCOPE;
+    const responseType = window.env.RESPONSE_TYPE;
 
     const loginButton = document.getElementById('discord-login');
 

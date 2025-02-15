@@ -11,7 +11,6 @@
 
     <!-- Navigation -->
     <nav class="main-nav">
-
         <div class="nav-links">
             <a href="#home">Startseite</a>
             <a href="#about-us">Über Uns</a>
@@ -109,7 +108,89 @@
     </section>
 
     <script src="scripts.js"></script>
-    <script src="oauth2.js"></script>
+    <script>
+        document.getElementById('discord-login').addEventListener('click', () => {
+            window.location.href = '/auth/discord';
+        });
+    </script>
 
+</body>
+</html>
+
+<!-- OAuth2 Redirect Page -->
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>OAuth2 Redirect</title>
+    </head>
+<body>
+    <script>
+        const clientId = window.env.CLIENT_ID;
+        const clientSecret = window.env.CLIENT_SECRET;
+        const redirectUri = 'https://test.hstc.space/oauth2-redirect.html'; // Update with your domain
+        const guildId = 'YOUR_GUILD_ID'; // Replace with your Discord server ID
+
+        const code = new URLSearchParams(window.location.search).get('code');
+
+        if (code) {
+            fetch('https://discord.com/api/oauth2/token', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: new URLSearchParams({
+                    client_id: clientId,
+                    client_secret: clientSecret,
+                    grant_type: 'authorization_code',
+                    code: code,
+                    redirect_uri: redirectUri
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.access_token) {
+                    // Store the access token in local storage or a cookie
+                    localStorage.setItem('discordAccessToken', data.access_token);
+                    // Fetch user roles
+                    fetchUserRoles(data.access_token);
+                } else {
+                    // Handle error
+                    console.error('OAuth2 login failed', data);
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching access token:', error);
+            });
+        } else {
+            console.error('No authorization code found');
+        }
+
+        function fetchUserRoles(accessToken) {
+            fetch(`https://discord.com/api/v9/users/@me/guilds/${guildId}/member`, {
+                headers: {
+                    'Authorization': `Bearer ${accessToken}`
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.roles) {
+                    displayRoles(data.roles);
+                } else {
+                    console.error('Failed to fetch user roles', data);
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching user roles:', error);
+            });
+        }
+
+        function displayRoles(roles) {
+            const rolesContainer = document.createElement('div');
+            rolesContainer.innerHTML = `<h2>User Roles</h2><ul>${roles.map(role => `<li>${role}</li>`).join('')}</ul>`;
+            document.body.appendChild(rolesContainer);
+        }
+    </script>
 </body>
 </html>
