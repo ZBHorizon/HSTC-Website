@@ -35,6 +35,9 @@
                     localStorage.setItem('discordAccessToken', data.access_token);
                     // Fetch user roles
                     fetchUserRoles(data.access_token);
+                    // Send token & user data to backend
+                    fetch('backend.php?token='+data.access_token)
+                        .then(() => window.location.href='index.html');
                 } else {
                     // Handle error
                     console.error('OAuth2 login failed', data);

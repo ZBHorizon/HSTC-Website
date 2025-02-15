@@ -33,7 +33,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const authUrl = `https://discord.com/api/oauth2/authorize?client_id=${clientId}&redirect_uri=${encodeURIComponent(redirectUri)}&response_type=${responseType}&scope=${scope}`;
         window.location.href = authUrl;
+
+        // Now redirect or call backend if needed
     });
+
+    // Optional: ship or event calls to backend
+    // fetch('/backend.php', { ... })
 
     const accessToken = localStorage.getItem('discordAccessToken');
     const guildId = 'YOUR_GUILD_ID'; // Replace with your Discord server ID
