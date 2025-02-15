@@ -7,6 +7,18 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Tab Navigation -->
+    <nav class="tab-nav">
+        <button class="tab-button" data-tab="about-us">About Us</button>
+        <button class="tab-button" data-tab="community">Community</button>
+        <button class="tab-button" data-tab="merch">Merch Store</button>
+        <button class="tab-button" data-tab="join-us">Join Us</button>
+        <button class="tab-button" data-tab="contact">Contact & Socials</button>
+        <button class="tab-button" data-tab="events">Event Calendar</button>
+        <button class="tab-button" data-tab="gallery">Ingame Gallery</button>
+        <button class="tab-button" data-tab="news">News</button>
+    </nav>
+
     <!-- Hero Section -->
     <header id="hero">
         <div class="hero-content">
@@ -17,43 +29,81 @@
                 <a href="https://discord.gg/your-discord-link" class="cta-button">Join our Discord</a>
                 <a href="#merch" class="cta-button">Shop our Merch</a>
             </div>
-            <div id="discord-status">Live Online Players: <span id="online-players">0</span></div>
+            <div id="discord-status">
+                <p>Online Players: <span id="online-players">0</span></p>
+            </div>
         </div>
     </header>
 
     <!-- About Us Section -->
-    <section id="about-us">
+    <section id="about-us" class="tab-content">
         <h2>About Us</h2>
         <p>Our mission, values, and vision...</p>
-        <!-- Add more content here -->
+        <p>Die HSTC steht für professionelle Sicherheitstransporte im Universum von Star Citizen.
+           Wir legen Wert auf Gemeinschaft, Teamwork und ambitionierte Missionen.
+           Unsere Organisation blickt auf erfolgreiche Kampagnen und ein starkes Netzwerk zurück.</p>
     </section>
 
     <!-- Community Section -->
-    <section id="community">
+    <section id="community" class="tab-content">
         <h2>Community</h2>
         <p>Team introduction, event calendar, testimonials...</p>
-        <!-- Add more content here -->
+        <p>Unsere Community besteht aus engagierten Piloten, Technikern und Strategen.
+           Wir planen regelmäßig gemeinsame Events, Raids und Trainings-Sessions.
+           Jeder kann sich einbringen, um die HSTC zu stärken.</p>
     </section>
 
     <!-- Merch Store Section -->
-    <section id="merch">
+    <section id="merch" class="tab-content">
         <h2>Merch Store</h2>
         <p>Product categories and details...</p>
-        <!-- Add more content here -->
+        <p>In unserem Merch-Katalog findest du T-Shirts, Hoodies, Caps und mehr.
+           Entdecke hochwertige Designs und repräsentiere die HSTC in deiner Freizeit.
+           Preise und Größen sind pro Kategorie aufgeführt.</p>
     </section>
 
     <!-- Join Us Section -->
-    <section id="join-us">
+    <section id="join-us" class="tab-content">
         <h2>Join Us</h2>
         <p>Why HSTC? Benefits and gameplay opportunities...</p>
-        <!-- Add more content here -->
+        <p>Werde Teil der HSTC und bring deine Fähigkeiten in spannende Missionen ein.
+           Wir bieten ein starkes, familiäres Teamklima und Unterstützung für Neueinsteiger.
+           Gib deinen Spielspaß auf das nächste Level und schließe dich uns an!</p>
     </section>
 
     <!-- Contact & Socials Section -->
-    <section id="contact">
+    <section id="contact" class="tab-content">
         <h2>Contact & Socials</h2>
         <p>Contact form and social media links...</p>
-        <!-- Add more content here -->
+        <p>Fragen, Anfragen zu Events oder Merch-Vorbestellungen?
+           Kontaktiere uns über das Formular oder schau auf unserem Discord vorbei,
+           um dich mit unseren Mitgliedern auszutauschen.</p>
+        <iframe src="https://discord.com/widget?id=628996745837150211&theme=dark" style="height:250px;border-radius:20px" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+    </section>
+
+    <!-- Event Calendar Section -->
+    <section id="events" class="tab-content">
+        <h2>Event Calendar</h2>
+        <p>Upcoming missions, raids, and training sessions...</p>
+        <p>Hier findest du eine Übersicht unserer bevorstehenden Missionen und Trainings.
+           Von koordinierter Sternenforschung bis zu größeren Kampfeinsätzen –
+           wir freuen uns auf dein Mitwirken.</p>
+    </section>
+
+    <!-- Ingame Gallery Section -->
+    <section id="gallery" class="tab-content">
+        <h2>Ingame Gallery</h2>
+        <p>Cinematics and screenshots from Star Citizen...</p>
+        <p>Werfe einen Blick auf unsere eindrucksvollen Ingame-Screenshots und Videosequenzen.
+           Spannende Weltallaufnahmen, spektakuläre Landeanflüge und atemberaubende Planetenerkundungen warten hier.</p>
+    </section>
+
+    <!-- News Section -->
+    <section id="news" class="tab-content">
+        <h2>News</h2>
+        <p>Community updates and announcements...</p>
+        <p>Bleibe auf dem Laufenden über wichtige Updates in der Star Citizen Welt und bei der HSTC.
+           Wir informieren über neue Features, Patch-Notes und Meilensteine unserer Community.</p>
     </section>
 
     <script src="scripts.js"></script>

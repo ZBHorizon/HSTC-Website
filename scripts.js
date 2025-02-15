@@ -3,18 +3,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const onlinePlayers = document.getElementById('online-players');
     onlinePlayers.textContent = '42'; // Example value, replace with actual data
 
-    // Placeholder for event countdown
-    const countdownTimer = document.getElementById('countdown-timer');
-    const eventDate = new Date('2023-12-31T23:59:59'); // Example date, replace with actual event date
-
-    function updateCountdown() {
+    // Event countdown functionality
+    const eventCountdown = document.getElementById('event-countdown');
+    const eventDate = new Date('2023-12-31T00:00:00'); // Example event date
+    const updateCountdown = () => {
         const now = new Date();
-        const timeDifference = eventDate - now;
-        const hours = Math.floor(timeDifference / (1000 * 60 * 60));
-        const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
-        countdownTimer.textContent = `${hours}:${minutes}:${seconds}`;
-    }
-
+        const timeLeft = eventDate - now;
+        const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+        eventCountdown.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    };
     setInterval(updateCountdown, 1000);
 });

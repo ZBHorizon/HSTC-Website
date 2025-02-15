@@ -9,11 +9,18 @@ header#hero {
     background: url('assets/star-background.jpg') no-repeat center center/cover;
     text-align: center;
     padding: 100px 20px;
+    background-attachment: fixed;
 }
 
 header#hero .logo {
     width: 200px;
     animation: logo-animation 2s infinite alternate;
+}
+
+header#hero .community-photo {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px 0;
 }
 
 header#hero h1 {
@@ -32,16 +39,23 @@ header#hero .cta-button {
     margin: 0 10px;
     text-decoration: none;
     border-radius: 5px;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 0 10px rgba(230, 126, 34, 0.7);
 }
 
 header#hero .cta-button:hover {
     background-color: #FF8C00;
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(255, 140, 0, 0.7);
 }
 
 #discord-status, #event-countdown {
     margin-top: 20px;
     font-size: 1.2em;
+}
+
+#discord-status {
+    color: #E67E22;
 }
 
 section {
@@ -61,4 +75,14 @@ section h2 {
     to {
         transform: scale(1.1);
     }
+}
+
+#events, #gallery, #news {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+#events h2, #gallery h2, #news h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
 }
