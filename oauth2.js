@@ -1,5 +1,3 @@
-require('dotenv').config();
-
 document.addEventListener('DOMContentLoaded', () => {
     const clientId = process.env.CLIENT_ID;
     const redirectUri = 'https://test.hstc.space/oauth2-redirect.html'; // Update with your domain
