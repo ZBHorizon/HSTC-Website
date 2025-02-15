@@ -41,17 +41,24 @@
         <p>Die HSTC ist eine professionelle Star Citizen Organisation, spezialisiert auf Sicherheit, Transport und strategische Missionen.</p>
     </section>
 
-    <!-- Orga-Kalender -->
+    <!-- Überarbeitet: Orga-Kalender -->
     <section id="orga-calendar" class="orga-calendar">
         <h2>Orga-Kalender</h2>
         <div class="calendar-grid">
-            <div class="calendar-day">Mo</div>
-            <div class="calendar-day">Di</div>
-            <div class="calendar-day">Mi</div>
-            <div class="calendar-day">Do</div>
-            <div class="calendar-day">Fr</div>
-            <div class="calendar-day">Sa</div>
-            <div class="calendar-day">So</div>
+            <!-- Beispiel-Event -->
+            <div class="calendar-day">
+                <strong>Event 1</strong><br>
+                2023-10-15<br>
+                <button class="cta-button event-signup">Teilnehmen</button>
+                <button class="cta-button event-feedback">Feedback</button>
+            </div>
+            <div class="calendar-day">
+                <strong>Event 2</strong><br>
+                2023-10-20<br>
+                <button class="cta-button event-signup">Teilnehmen</button>
+                <button class="cta-button event-feedback">Feedback</button>
+            </div>
+            <!-- ... weitere Events ... -->
         </div>
         <p>Hier findest du unsere geplanten Events, Trainings und Missionen.</p>
     </section>
@@ -71,12 +78,12 @@
         </div>
     </section>
 
-    <!-- Mitglied werden -->
+    <!-- Überarbeitet: Mitglied werden -->
     <section id="join-us">
         <h2>Mitglied werden</h2>
         <p>Schließe dich uns an und werde Teil unserer wachsenden Community.</p>
         <button id="discord-login" class="cta-button">
-            Mitglied werden (<span id="online-players">N/A</span> online)
+            Mit Discord anmelden (<span id="online-players">N/A</span> online)
         </button>
     </section>
 
@@ -89,6 +96,25 @@
 
     <!-- User Roles Section -->
     <section id="user-roles">
+    </section>
+
+    <!-- Neu: Schiffe-Verwaltung -->
+    <section id="ships">
+        <h2>Schiffe Verwaltung</h2>
+        <p>Verwalte hier deine Ingame-Schiffe. Wähle deine Schiffe aus und ordne sie der Orga zu oder behalte sie privat.</p>
+        <form id="ship-management-form">
+            <label>
+                <input type="checkbox" name="ships[]" value="Anaconda"> Anaconda
+            </label><br>
+            <label>
+                <input type="checkbox" name="ships[]" value="Caterpillar"> Caterpillar
+            </label><br>
+            <label>
+                <input type="checkbox" name="ships[]" value="Cutlass"> Cutlass
+            </label><br>
+            <!-- ... weitere Schiffoptionen ... -->
+            <button type="submit" class="cta-button">Schiffe speichern</button>
+        </form>
     </section>
 
     <script src="scripts.js"></script>

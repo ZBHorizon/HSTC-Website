@@ -95,4 +95,30 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     });
+
+    // Event listeners für Event-Anmeldungen und Feedback
+    document.querySelectorAll('.event-signup').forEach(button => {
+        button.addEventListener('click', () => {
+            // Platzhalter: Anfrage zur Eventteilnahme an den Backend senden
+            alert('Du hast dich für dieses Event angemeldet!');
+        });
+    });
+    document.querySelectorAll('.event-feedback').forEach(button => {
+        button.addEventListener('click', () => {
+            // Platzhalter: Feedback abgeben (z.B. Öffnen eines Modals)
+            alert('Feedback-Funktion kommt bald!');
+        });
+    });
+
+    // Schiff-Management: Verlaufsformular verarbeiten
+    const shipForm = document.getElementById('ship-management-form');
+    if (shipForm) {
+        shipForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const formData = new FormData(shipForm);
+            const ships = formData.getAll('ships[]');
+            // Platzhalter: Schiffsdaten per AJAX an backend.php senden
+            alert('Schiffe gespeichert: ' + ships.join(', '));
+        });
+    }
 });
