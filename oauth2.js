@@ -1,5 +1,7 @@
+require('dotenv').config();
+
 document.addEventListener('DOMContentLoaded', () => {
-    const clientId = '939491899226615808';
+    const clientId = process.env.CLIENT_ID;
     const redirectUri = 'https://test.hstc.space/oauth2-redirect.html'; // Update with your domain
     const scope = 'identify guilds guilds.members.read';
     const responseType = 'code';
