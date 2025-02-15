@@ -16,4 +16,19 @@ document.addEventListener('DOMContentLoaded', () => {
         eventCountdown.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
     };
     setInterval(updateCountdown, 1000);
+
+    // Tab Navigation Logic
+    document.querySelectorAll('.tab-button').forEach(button => {
+        button.addEventListener('click', () => {
+            const tabId = button.getAttribute('data-tab');
+            document.querySelectorAll('.tab-content').forEach(tc => {
+                tc.style.display = (tc.id === tabId) ? 'block' : 'none';
+            });
+        });
+    });
+
+    // Initially nur die erste Sektion sichtbar
+    document.querySelectorAll('.tab-content').forEach((tc, index) => {
+        tc.style.display = index === 0 ? 'block' : 'none';
+    });
 });
