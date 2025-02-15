@@ -10,7 +10,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/auth/discord', (req, res) => {
     const clientId = process.env.CLIENT_ID;
-    const redirectUri = process.env.REDIRECT_URI;
+    const redirectUri = 'https://test.hstc.space/oauth2-redirect.html'; // Update with your domain
     const scope = 'identify guilds guilds.members.read';
     const responseType = 'code';
 
@@ -22,7 +22,7 @@ app.get('/auth/discord/callback', async (req, res) => {
     const code = req.query.code;
     const clientId = process.env.CLIENT_ID;
     const clientSecret = process.env.CLIENT_SECRET;
-    const redirectUri = process.env.REDIRECT_URI;
+    const redirectUri = 'https://test.hstc.space/oauth2-redirect.html'; // Update with your domain
 
     if (!code) {
         return res.status(400).send('No authorization code provided');
