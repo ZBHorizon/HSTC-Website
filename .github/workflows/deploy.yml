@@ -23,7 +23,7 @@ jobs:
 
       - name: Set environment variables
         run: |
-          echo "window.env = { CLIENT_ID: '${{ secrets.CLIENT_ID }}', CLIENT_SECRET: '${{ secrets.CLIENT_SECRET }}' };" > /d:/Projects/HSTC/HSTC-Website/env.js
+          echo "window.env = { CLIENT_ID: '${{ secrets.CLIENT_ID }}', CLIENT_SECRET: '${{ secrets.CLIENT_SECRET }}' };" > env.js
 
       - name: Build and deploy
         run: npm run build
