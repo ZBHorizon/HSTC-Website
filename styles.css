@@ -10,71 +10,73 @@ header#hero {
     text-align: center;
     padding: 100px 20px;
     background-attachment: fixed;
-    position: relative;   position: relative;
-}}
+    position: relative;
+}
 
-header#hero::before {re {
+header#hero::before {
     content: "";
-    position: absolute;   position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0, 0, 0, 0.5);0.5);
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
     z-index: 1;
 }
 
-header#hero .hero-content {eader#hero .hero-content {
-    position: relative;    position: relative;
+header#hero .hero-content {
+    position: relative;
     z-index: 2;
 }
 
-header#hero .logo {eader#hero .logo {
-    width: 200px;    width: 200px;
-    animation: logo-animation 2s infinite alternate;ion 2s infinite alternate;
+header#hero .logo {
+    width: 200px;
+    animation: logo-animation 2s infinite alternate;
 }
 
-header#hero .community-photo {header#hero .community-photo {
+header#hero .community-photo {
     width: 100%;
     max-width: 600px;
     margin: 20px 0;
+    border-radius: 10px;   border-radius: 10px;
+    box-shadow: 0 0 15px rgba(230, 126, 34, 0.7);    box-shadow: 0 0 15px rgba(230, 126, 34, 0.7);
 }
 
 header#hero h1 {
-    font-size: 3em;
-    margin: 20px 0;
+    font-size: 3em;   font-size: 3em;
+    margin: 20px 0;    margin: 20px 0;
 }
 
-header#hero .cta-buttons {header#hero .cta-buttons {
-    margin: 20px 0;
+header#hero .cta-buttons {eader#hero .cta-buttons {
+    margin: 20px 0;    margin: 20px 0;
 }
 
 header#hero .cta-button {
-    background-color: #E67E22;   background-color: #E67E22;
-    color: #FFFFFF;    color: #FFFFFF;
+    background-color: #E67E22;E67E22;
+    color: #FFFFFF;
     padding: 10px 20px;
     margin: 0 10px;
-    text-decoration: none;none;
-    border-radius: 5px;   border-radius: 5px;
-    transition: background-color 0.3s, transform 0.3s;    transition: background-color 0.3s, transform 0.3s;
-    box-shadow: 0 0 10px rgba(230, 126, 34, 0.7); 0 10px rgba(230, 126, 34, 0.7);
-    text-transform: uppercase; uppercase;
-    letter-spacing: 1px;   letter-spacing: 1px;
-}}
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;ansform 0.3s;
+    box-shadow: 0 0 10px rgba(230, 126, 34, 0.7););
+    text-transform: uppercase;  text-transform: uppercase;
+    letter-spacing: 1px;    letter-spacing: 1px;
+}
 
-header#hero .cta-button:hover {:hover {
-    background-color: #FF8C00;FF8C00;
+header#hero .cta-button:hover {
+    background-color: #FF8C00;
     transform: scale(1.1);   transform: scale(1.1);
     box-shadow: 0 0 20px rgba(255, 140, 0, 0.7);    box-shadow: 0 0 20px rgba(255, 140, 0, 0.7);
 }
 
-#discord-status, #event-countdown {countdown {
+#discord-status, #event-countdown {
     margin-top: 20px;   margin-top: 20px;
     font-size: 1.2em;    font-size: 1.2em;
 }
 
-#discord-status {
-    color: #E67E22;olor: #E67E22;
+#discord-status {discord-status {
+    color: #E67E22;    color: #E67E22;
 }
 
-section {on {
+section {
     padding: 60px 20px;   padding: 60px 20px;
     text-align: center;    text-align: center;
 }
@@ -84,48 +86,11 @@ section h2 {
     margin-bottom: 20px;    margin-bottom: 20px;
 }
 
-@keyframes logo-animation {n {
-    from {   from {
+@keyframes logo-animation {
+    from {    from {
         transform: scale(1);        transform: scale(1);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    }    }
+    to {    to {
+        transform: scale(1.1);        transform: scale(1.1);
+    }    }
 }
-}    border-radius: 10px;
-    border-radius: 10px;    box-shadow: 0 0 15px rgba(230, 126, 34, 0.7);
-    box-shadow: 0 0 15px rgba(230, 126, 34, 0.7);.community-photo {
-.community-photo {
-}
-}    margin-bottom: 20px;
-    margin-bottom: 20px;    font-size: 2.5em;
-    font-size: 2.5em;#events h2, #gallery h2, #news h2 {
-#events h2, #gallery h2, #news h2 {
-}
-}    text-align: center;
-    text-align: center;    padding: 60px 20px;
-    padding: 60px 20px;#events, #gallery, #news {
-#events, #gallery, #news {
-}
-}    }
-    }        transform: scale(1.1);
-        transform: scale(1.1);    to {
-    to {    }    }
