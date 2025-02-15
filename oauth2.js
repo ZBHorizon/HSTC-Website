@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const clientId = '939491899226615808';
     const redirectUri = window.location.origin + '/oauth2-redirect.html';
     const scope = 'identify';
-    const responseType = 'token';
+    const responseType = 'code';
 
     const loginButton = document.getElementById('discord-login');
 
